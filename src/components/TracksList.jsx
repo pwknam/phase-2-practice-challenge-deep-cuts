@@ -1,10 +1,10 @@
 import React from 'react'
 import Track from './Track'
 
-function TracksList({ tracks }) {
+function TracksList({ tracks, deleteTrack }) {
 
   const renderTracks = tracks.map((track) => {
-    return <Track key={track.id} trackData={track} />
+    return <Track key={track.id} trackData={track} deleteTrack={deleteTrack} />
   })
 
 

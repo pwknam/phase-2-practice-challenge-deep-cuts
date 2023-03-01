@@ -33,14 +33,19 @@ function TracksPage() {
     }
   })
 
-  console.log(tracksToDisplay)
+
+  function deleteTrack(deletedTrack){
+    const updatedList = tracks.filter((track)=>track.id !== deletedTrack.id)
+
+    setTracks(updatedList)
+  }
 
 
   return (
     <div>
       <Search handleSearchChange={handleSearchChange}/>
       <AddTrackForm addNewTrack={addNewTrack}/>
-      <TracksList tracks={tracksToDisplay}/>
+      <TracksList tracks={tracksToDisplay} deleteTrack={deleteTrack}/>
     </div>
   )
 }
